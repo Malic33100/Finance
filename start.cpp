@@ -2,16 +2,17 @@
 #include <iomanip>
 #include <fstream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
 void work(){
-int income[5];
 string Incometype[5];
 int total = 0;
+vector <int> salary;
 
-for(int i = 0; Incometype[i] < 5; i++){
-Incometype[i] = " ";
+for(int i = 0; i < 5; i++){
+Incometype[i] =  " ";
 }
 
 cout << "Type the name of the income type :" << endl;
@@ -32,34 +33,35 @@ else{
 };
 
 cout <<"How much does this bring in monthly ?" << endl;
-if(income[0] != 0){
-cin >> income[0];
+
+if(salary[0] != 0){
+cin >> salary[0];
 }
-else if(income[1] != 0){
-    cin >> income[1];
+else if(salary[1] != 0){
+    cin >> salary[1];
 }
-else if(income[2] != 0){
-    cin >> income[2];
+else if(salary[2] != 0){
+    cin >> salary[2];
 }
-else if(income[3] != 0){
-    cin >> income[3];
+else if(salary[3] != 0){
+    cin >> salary[3];
 }
-else if(income[4] != 0){
-    cin >> income[4];
-    cout <<"5 streams man! Great Job!" << endl;
+else if(salary[4] != 0){
+    cin >> salary[4];
+    cout <<" 5 Income streams fam! " << endl;
 }
 
-total = income[0] + income[1] + income[2] + income[3] + income[4];
+total = salary[0] + salary[1] + salary[2] + salary[3] + salary[4];
 
 cout <<"Total monthly income is currently at :" << fixed << setprecision(2) << total << endl;
 };
 
 void bills(){
-int rent[5];
+vector <int> rent;
 string billtype[5];
 int billtotal = 0;
 
-for(int i = 0; billtype[i] < 5; i++){
+for(int i = 0; i < 5; i++){
 billtype[i] = " ";
 };
 
@@ -106,11 +108,11 @@ cout<<"Your monthy expenses are currently set at :" << fixed << setprecision(2) 
 };
 
 void future(){
-int saving[5];
+vector <int> saving;
 string savetype[5];
 int savetotal = 0;
 
-for(int i = 0; savetype[i] < 5; i++){
+for(int i = 0; i < 5; i++){
 savetype[i] = " ";
 };
 
@@ -150,41 +152,136 @@ else if(saving[4] != 0){
     cout <<"Keep it up and you might retire early!" << endl;
 }
 
-savetotal = saving[0] + saving[1] + saving[2] + saving[3] + saving[4] ;
+savetotal = saving[0] + saving[1] + saving[2] + saving[3] + saving[4];
 
-cout<<"Your monthy savings are currently set at :" << fixed << setprecision(2) << savetotal << endl;
+cout << "Your monthy savings are currently set at :" << fixed << setprecision(2) << savetotal << endl;
 };
 
 void debt(){
+    int credit;
+
+cout << "Enter your FICO credit score :" << endl;
+cin >> credit;
+
+if(credit >= 760){
+    cout << "You're in the top tier of credit scorers. Good work! " << endl;
+}
+else if(760 > credit >= 720){
+    cout << "Your credit is in excellent shape! YOu can still improve too!" << endl;
+}
+else if(720 > credit >= 660){
+    cout << "Your credit is in the average category. Looks like you've got room to grow! " << endl;
+}
+else if(660 > credit >= 560){
+    cout << "Your credit isn't in the best shape, but that's a great setup for a comeback! " << endl;
+}
+else{
+    cout << "This is the start of your credit journey. Lets begin! " << endl;
+};
+
 
 };
 
 void house(){
+int anincome;
+int creditsco;
+int interest;
+int fifloan ;
+int tirloan ;
+
+cout <<" Welcome to the mortgage calculator! Please note that HOA fees, mortgage insurance, and property taxes." << endl;
+cout <<"Please understand that these are estimates and are only meant for that purpose. " << endl;
+cout <<" We calculate your mortgage payments for you. You give us your info and we do the math." << endl;
+
+cout <<" To start off, enter your annual income :" << endl;
+cin >> anincome;
+
+cout <<"We also need your credit score :" << endl;
+cin >> creditsco;
+
+if(creditsco > 760){
+interest = .0275;
+}
+else if(creditsco > 720){
+interest = .0300;
+}
+else if(creditsco > 660){
+interest = .035;
+}
+else if(creditsco > 660){
+cout <<"Your credit isnt good enough to qualify for a loan. Time to start building!" << endl;
+}
+
+fifloan = anincome * 30 * interest;
+tirloan = anincome * 15 * interest;
 
 };
 
 void pool(){
+int curr;
+int newmoney;
+int homecurr;
+
+cout <<"Please note we only support translations from USD. We automatically assume you are transferring " << endl;
+cout <<"USD into another currency. Please select the desired currency: " << endl;
+cout <<"1: CAD, Canadian dollars " << endl;
+cout <<"2: P, Mexican pesos " << endl;
+cout <<"3: EUR, European union euros " << endl;
+cout <<"4: YEN, Japanese yen " << endl;
+cin >> curr;
+
+switch(curr){
+    case '1': cout <<" How much USD do you have ?" << endl;
+    cin >> homecurr;
+    newmoney = homecurr * 1.29; 
+    cout << "You have " << newmoney << " in CAD. " << endl;
+    break;
+
+    case '2':cout <<" How much USD do you have ?" << endl;
+    cin >> homecurr;
+    newmoney = homecurr * 20.84; 
+    cout << "You have " << newmoney << " in P. " << endl;
+    break;
+
+    case '3':cout <<" How much USD do you have ?" << endl;
+    cin >> homecurr;
+    newmoney = homecurr * .89; 
+    cout << "You have " << newmoney << " in EUR." << endl;
+    break;
+
+    case '4':cout <<" How much USD do you have ?" << endl;
+    cin >> homecurr;
+    newmoney = homecurr * 113.72; 
+    cout << "You have " << newmoney << " in YEN. " << endl;
+    break;
+
+    }
 
 };
 
-void over(){
-cout <<"Your current income is :" << total.income << endl;
+void over(int billtotal , int total ){
+cout <<"Your current income is :" << total << endl;
 
-cout <<"Your current monthly epenses add up to :" << bills.billtotal << endl;
+cout <<"Your current monthly epenses add up to :" << billtotal << endl;
 };
+
+void check(){
+cout << "If you want to save your changes to an external enter Y/y" << endl;
+
+}
 
 int main(){
     int chin;
 
-    cout <<"Welcome to Shillings! What would you like to do today?" << endl;
-    cout <<"1: Input income " << endl;
-    cout <<"2: Input monthly bills " << endl;
-    cout <<"3: Input investments and savings " << endl;
-    cout <<"4: Input credit info " << endl;
-    cout <<"5: Calculate how much house you can afford " << endl;
-    cout <<"6: Calculate your investment pools " << endl;
-    cout <<"7: See an overview of your finances " << endl;
-    cout <<"8: Save overview to a file " << endl;
+    cout << "Welcome to Shillings! What would you like to do today?" << endl;
+    cout << "1: Input income " << endl;
+    cout << "2: Input monthly bills " << endl;
+    cout << "3: Input investments and savings " << endl;
+    cout << "4: Input credit score " << endl;
+    cout << "5: Calculate how much house you can afford " << endl;
+    cout << "6: See how much your moneys worth in major foreign currencies " << endl;
+    cout << "7: See an overview of your finances " << endl;
+    cout << "8: Save overview to a file " << endl;
     cin >> chin;
 
     switch (chin){
