@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width , initial-scale=1">
+
+<script>
+    $(document).ready(function() {
+        $("header").addClass("animated bounce");
+        $("button").addClass("btn-primary");
+        $("button").css("color","blue");
+    })
+</script> 
+
+<body> 
+<div class="heading" id="header">                  
+<header>
+ <h1 class=h1  id="h1"> Welcome to Shillings!</h1>
+</header>
+</div>
+
+<div class="body">
+    <main>
+        <div class="Allbuttons">
+<button class="button btn-default" id="1"> Input your income</button>
+<button class="button btn-default" id="2">Input your expenses</button>
+<button class="button btn-default" id="3">Input your </button>
+<button class="button btn-default" id="4">Input your</button>
+<button class="button btn-default" id="5">Input your</button>
+<button class="button btn-default" id="6">Input your</button>
+<button class="button btn-default" id="7">Input your</button>
+<button class="button btn-default" id="8">Input your</button>
+</div>
+    </main>
+</body>
+</div>
+  </html>
